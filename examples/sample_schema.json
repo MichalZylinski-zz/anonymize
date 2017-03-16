@@ -1,0 +1,43 @@
+{
+  "input": {
+    "inputType": "File",
+    "inputProperties": {
+      "schema": [
+        "Date",
+        "SessionId",
+        "Value"
+      ],
+      "format": "CSV",
+      "fileName": "test_input.csv"
+    }
+  },
+  "output": {
+    "outputType": "File",
+    "outputProperties": {
+      "replace": true,
+      "format": "JSON",
+      "fileName": "test_output.json"
+    }
+  },
+  "storage": {
+    "storageType": "memory",
+    "storageProperties": {
+      "restore": true,
+      "fileName": "storage.bin"
+    }
+  },
+  "rules": {
+    "remove": [
+      {
+        "fieldName": "Date"
+      }
+    ],
+    "replace": [
+      {
+        "fieldName": "SessionId",
+        "globalName": "id"
+      }
+    ]
+  }
+}
+  
