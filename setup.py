@@ -5,7 +5,7 @@ setup(name="anonymize",
       author_email = "michal.zylinski@gmail.com",
       license = "MIT",
       url="https://github.com/MichalZylinski/anonymize",
-      version="0.5", 
+      version="0.6", 
       description="Simple yet efficient data anonymization framework",
       packages=['anonymize','examples'],
       package_data={'':['*.json', '*.csv']},
@@ -15,6 +15,7 @@ setup(name="anonymize",
           "Programming Language :: Python :: 2.7",
           "Programming Language :: Python :: 3"
           ],      
+      install_requires=["pika"]
       )
 
 

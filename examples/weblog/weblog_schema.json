@@ -1,0 +1,42 @@
+{
+  "input": {
+    "inputType": "File",
+    "inputProperties": {
+      "schema": [
+        "Date",
+        "IP",
+        "SessionId",
+        "Operation",
+	      "UserAgent"
+      ],
+      "format": "CSV",
+      "quote": "\"",
+      "fileName": "weblog_short.log"
+    }
+  },
+  "output": {
+    "outputType": "File",
+    "outputProperties": {
+      "replace": true,
+      "format": "CSV",
+      "fileName": "weblog_output.csv",
+      "quote":"\""
+    }
+  },
+  "storage": {
+    "storageType": "memory",
+    "storageProperties": {
+      "restore": true,
+      "fileName": "weblog.bin"
+    }
+  },
+  "rules": {
+    "replace": [
+      {
+        "fieldName": "IP",
+        "globalName":  "IP"
+      }
+    ]
+   } 
+}
+  

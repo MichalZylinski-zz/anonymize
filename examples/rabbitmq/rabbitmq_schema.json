@@ -1,6 +1,6 @@
 {
   "input": {
-    "inputType": "File",
+    "inputType": "RabbitMQ",
     "inputProperties": {
       "schema": [
         "Date",
@@ -8,22 +8,25 @@
         "Value"
       ],
       "format": "CSV",
-      "fileName": "test_input.csv"
+      "URI": "amqp://localhost/",
+      "QueueName":"input"
+
     }
   },
   "output": {
-    "outputType": "File",
+    "outputType": "RabbitMQ",
     "outputProperties": {
       "replace": true,
-      "format": "JSON",
-      "fileName": "test_output.json"
+      "format": "CSV",
+      "URI": "amqp://localhost/",
+      "QueueName" :  "output"
     }
   },
   "storage": {
     "storageType": "memory",
     "storageProperties": {
-      "restore": true,
-      "fileName": "storage.bin"
+      "restore": false,
+      "fileName": "rabbitmq_storage.bin"
     }
   },
   "rules": {

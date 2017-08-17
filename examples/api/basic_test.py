@@ -9,10 +9,10 @@ storage = MemoryStorage("storage.bin", restore=True)
 # Test 1 - Schemaless example
 #
 
-input = FileReader("test.csv", CSVFormat())
-output = FileWriter("test_output1.json", JSONFormat(), replace=True)
+input = FileReader("test_input.csv", CSVFormat())
+output = FileWriter("test_output1.csv", CSVFormat(), replace=True)
 
-e = Engine(input,output,storage)
+e = Engine(input, output, storage)
 e.add_rule(EngineRule("remove","0")) #removing first/date column
 e.add_rule(EngineRule("replace", "1", "id")) #replacing second/id column with hashed value
 e.run()
@@ -22,7 +22,7 @@ e.run()
 #
 
 schema = ["Date","SessionId","Value"]
-input2 = FileReader("test.csv", CSVFormat(schema=schema))
+input2 = FileReader("test_input.csv", CSVFormat(schema=schema))
 output2 = FileWriter("test_output2.json", JSONFormat(), replace=True)
 e = Engine(input2, output2, storage)
 e.add_rule(EngineRule("remove", "Date"))
@@ -33,9 +33,9 @@ e.run()
 #Test 3 - Reading JSON data and saving it back as CSV
 #
 
-input3 = FileReader("test_output1.json", JSONFormat())
+input3 = FileReader("test_output2.json", JSONFormat())
 output3 = ConsoleWriter(CSVFormat())
 e = Engine(input3, output3, storage)
-e.add_rule(EngineRule("replace", "1", global_name="id"))
+e.add_rule(EngineRule("replace", "SessionId", global_name="id"))
 e.run()
 
