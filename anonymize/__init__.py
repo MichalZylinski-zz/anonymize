@@ -44,7 +44,6 @@ class SchemaParser:
     def __parse_storage__(self):
         storage_types = ["memory"]
         type = self._json_["storage"].get("storageType")
-        print(type)
         properties = self._json_["storage"].get("storageProperties")
         if type.lower() not in storage_types:
             raise ValueError("storageType: %s is not supported" % type)

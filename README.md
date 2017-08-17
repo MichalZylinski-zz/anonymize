@@ -28,7 +28,7 @@ optional arguments:
                         saves internal mapping dictionary as JSON file
   -d, --dump-storage    displays internal mapping dictionary
 ```
-Anonymize command always requires JSON-based configuration file called schema. It contains all necessary settings, like input and output definitions and transformation rules. [Here's basic example](https://raw.githubusercontent.com/MichalZylinski/anonymize/master/examples/sample_schema.json) of schema you may start with. There's also [detailed documentation](/docs/schema_reference.md) provided as well.
+Anonymize command always requires JSON-based configuration file called schema. It contains all necessary settings, like input and output definitions and transformation rules. [Here's basic example](https://raw.githubusercontent.com/MichalZylinski/anonymize/master/examples/weblog/weblog_schema.json) of schema you may start with. There's also [detailed documentation](/docs/schema_reference.md) provided as well.
 
 ### Running data masking job
 
